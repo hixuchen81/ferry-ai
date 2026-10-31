@@ -1,0 +1,30 @@
+{
+  "name": "ferry-ai",
+  "version": "0.2.0",
+  "description": "Ferry MCP server — Monid-compatible tool gateway for agents. This build: one MCP server, one mock tool (ferry_run), one SKILL.md.",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "ferry-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "node src/index.ts",
+    "dev:http": "node src/index.ts --http 3333",
+    "start": "node dist/index.js",
+    "start:http": "node dist/index.js --http 3333",
+    "smoke": "node scripts/smoke.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  }
+}
